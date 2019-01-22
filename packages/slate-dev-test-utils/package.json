@@ -2,7 +2,7 @@
   "name": "@sbezludny/slate-dev-test-utils",
   "libName": "slate-dev-test-utils",
   "description": "INTERNAL: A set of utils for Slate's core tests.",
-  "version": "0.0.3-0",
+  "version": "0.0.4-0",
   "license": "MIT",
   "repository": "git://github.com/ianstormtaylor/slate.git",
   "main": "src/index.js",

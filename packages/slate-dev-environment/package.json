@@ -2,7 +2,7 @@
   "name": "@sbezludny/slate-dev-environment",
   "libName": "slate-dev-environment",
   "description": "INTERNAL: A set of environment-related constants for Slate's core.",
-  "version": "0.2.3-0",
+  "version": "0.2.4-0",
   "license": "MIT",
   "repository": "git://github.com/ianstormtaylor/slate.git",
   "main": "lib/slate-dev-environment.js",
