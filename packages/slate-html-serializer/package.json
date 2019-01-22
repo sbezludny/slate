@@ -1,5 +1,6 @@
 {
-  "name": "slate-html-serializer",
+  "name": "@sbezludny/slate-html-serializer", 
+  "libName": "slate-html-serializer",
   "description": "An HTML serializer for Slate editors.",
   "version": "0.7.33",
   "license": "MIT",

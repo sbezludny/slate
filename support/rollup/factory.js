@@ -21,7 +21,7 @@ function configure(pkg, env, target) {
   const isProd = env === 'production'
   const isUmd = target === 'umd'
   const isModule = target === 'module'
-  const input = `packages/${pkg.name}/src/index.js`
+  const input = `packages/${pkg.libName}/src/index.js`
   const deps = []
     .concat(pkg.dependencies ? Object.keys(pkg.dependencies) : [])
     .concat(pkg.peerDependencies ? Object.keys(pkg.peerDependencies) : [])
@@ -37,7 +37,7 @@ function configure(pkg, env, target) {
     // modules by default.
     isUmd &&
       commonjs({
-        exclude: [`packages/${pkg.name}/src/**`],
+        exclude: [`packages/${pkg.libName}/src/**`],
         // HACK: Sometimes the CommonJS plugin can't identify named exports, so
         // we have to manually specify named exports here for them to work.
         // https://github.com/rollup/rollup-plugin-commonjs#custom-named-exports
@@ -71,7 +71,7 @@ function configure(pkg, env, target) {
 
     // Use Babel to transpile the result, limiting it to the source code.
     babel({
-      include: [`packages/${pkg.name}/src/**`],
+      include: [`packages/${pkg.libName}/src/**`],
     }),
 
     // Register Node.js globals for browserify compatibility.
@@ -88,9 +88,9 @@ function configure(pkg, env, target) {
       input,
       output: {
         format: 'umd',
-        file: `packages/${pkg.name}/${isProd ? pkg.umdMin : pkg.umd}`,
+        file: `packages/${pkg.libName}/${isProd ? pkg.umdMin : pkg.umd}`,
         exports: 'named',
-        name: startCase(pkg.name).replace(/ /g, ''),
+        name: startCase(pkg.libName).replace(/ /g, ''),
         globals: pkg.umdGlobals,
       },
       external: Object.keys(pkg.umdGlobals || {}),
@@ -103,12 +103,12 @@ function configure(pkg, env, target) {
       input,
       output: [
         {
-          file: `packages/${pkg.name}/${pkg.module}`,
+          file: `packages/${pkg.libName}/${pkg.module}`,
           format: 'es',
           sourcemap: true,
         },
         {
-          file: `packages/${pkg.name}/${pkg.main}`,
+          file: `packages/${pkg.libName}/${pkg.main}`,
           format: 'cjs',
           exports: 'named',
           sourcemap: true,

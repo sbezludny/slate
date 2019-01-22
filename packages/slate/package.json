@@ -1,5 +1,6 @@
 {
-  "name": "slate",
+  "name": "@sbezludny/slate", 
+  "libName": "slate",
   "description": "A completely customizable framework for building rich text editors.",
   "version": "0.44.9",
   "license": "MIT",
