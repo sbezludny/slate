@@ -2,7 +2,7 @@
   "name": "@sbezludny/slate-html-serializer",
   "libName": "slate-html-serializer",
   "description": "An HTML serializer for Slate editors.",
-  "version": "0.7.34-0",
+  "version": "0.7.35-0",
   "license": "MIT",
   "repository": "git://github.com/ianstormtaylor/slate.git",
   "main": "lib/slate-html-serializer.js",
